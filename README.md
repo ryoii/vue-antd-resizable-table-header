@@ -9,7 +9,7 @@ A resizable header component for `a-table` in [ant design for vue](https://2x.an
 
 + [Vue 3](https://github.com/vuejs/vue-next)
 + [ant design 2.x](https://github.com/vueComponent/ant-design-vue) for vue 3
-  [vue draggable resizable](https://github.com/mauricius/vue-draggable-resizable) (modified)
++ [vue draggable resizable](https://github.com/mauricius/vue-draggable-resizable) (modified)
 
 ## Usage
 
