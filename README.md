@@ -91,12 +91,8 @@ const columns = ref([
 <template>
   <div class="hello">
     <a-table
-      :scroll="{ x: '100%' }"
-      :row-key="rowKey"
-      size="small"
-      bordered
-      :columns="columns"
-      :loading="loading"
+      <!-- ellipsis -->
+      ...
       
       :components: "components"
     >
@@ -108,47 +104,7 @@ const columns = ref([
 import { ref } from "vue";
 import VueAntdResizableTableHeader from "vue-antd-resize-table-header.js"
 
-const columns = ref([
-  {
-    key: "key1",
-    dataIndex: "column",
-    title: "column1",
-    width: 300,
-    ellipsis: true,
-  },
-  {
-    key: "key2",
-    dataIndex: "column2",
-    title: "column2",
-    width: 300,
-    ellipsis: true,
-  },
-  {
-    key: "key3",
-    dataIndex: "column3",
-    title: "column3",
-    width: 300,
-    ellipsis: true,
-  },
-  {
-    key: "key4",
-    dataIndex: "column4",
-    title: "column4",
-    width: 300,
-    ellipsis: true,
-  },
-  {
-    key: "key5",
-    dataIndex: "column5",
-    title: "column5",
-    width: 300,
-    ellipsis: true,
-  },
-  {
-    key: "empty",
-    dataIndex: "empty"
-  }
-]);
+const columns = {...}; // ellipsis
 
 // define components
 const components = {
