@@ -4,7 +4,7 @@ import vueDraggableResizable from "./drag/VueDraggableResizable.vue";
 export default class VueAntdResizableTableHeader {
 
   constructor(columns) {
-    this.columns = columns.value;
+    this.columns = columns;
     this.originWidth = {}
     columns.value.forEach((col) => {
       this.originWidth[col.key] = col.width;
@@ -13,7 +13,7 @@ export default class VueAntdResizableTableHeader {
 
   cell = () => (props, children) => {
     const { key, ...restProps} = props;
-    const col = this.columns.find(c => c.key === key || c.dataIndex === key);
+    const col = this.columns.value.find(c => c.key === key || c.dataIndex === key);
     if(!col || !col.width) {
       return h('th', {...restProps}, [...children]);
     }
