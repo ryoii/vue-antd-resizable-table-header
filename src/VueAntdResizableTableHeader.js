@@ -45,7 +45,14 @@ export default class VueAntdResizableTableHeader {
       onclick: (e)=>e.stopPropagation(),
     }
 
+    // if fixed column
+    if(restProps.style.position) {
+      restProps.style.zIndex = '1';
+    } else {
+      restProps.style.position = 'relative';
+    }
+
     const dragHandle = h(vueDraggableResizable, {...dragProps});
-    return h('th', {...restProps, class:'resize-table-th', style:{position: "relative"}}, [...children, dragHandle]);
+    return h('th', {...restProps, class:'resize-table-th'}, [...children, dragHandle]);
   }
 }

@@ -62,10 +62,9 @@
   ],
   "main": "src/Vue.AntdResizableTableHeader.js",
   "files": [
-    "dist/*",
     "src/*",
     "*.json",
     "*.js",
-    ".md"
+    "README.md"
   ]
 }
