@@ -3,25 +3,25 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-antd-resizable-table-header.svg?style=flat-square)](https://npmjs.com/package/vue-antd-resizable-table-header)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-A resizable header component for `a-table` in [ant design for vue](https://2x.antdv.com/)
+可拖动改变宽度的 [ant design for vue](https://2x.antdv.com/) 表格表头组件
 
-English | [中文](./README_CN.md)
+[English](./README.md) | 中文
 
-## Dependencies
+## 依赖
 
 + [Vue 3](https://github.com/vuejs/vue-next)
 + [ant design 2.x](https://github.com/vueComponent/ant-design-vue) for vue 3
-+ [vue draggable resizable](https://github.com/mauricius/vue-draggable-resizable) (modified)
++ [vue draggable resizable](https://github.com/mauricius/vue-draggable-resizable) (修改后)
 
-## Usage
+## 快速使用
 
-### Install via npm
+### 通过 npm 安装
 
 ```
 npm install vue-antd-resizable-table-header
 ```
 
-### create a-table component
+### 创建一个 a-table 组件
 
 ```vue
 /* HelloWorld.vue */ 
@@ -87,7 +87,7 @@ const columns = ref([
 </script>
 ```
 
-### define and set component prop for a-table
+### 定义并设置 component 属性
 
 ```vue
 <template>
@@ -119,14 +119,14 @@ const components = {
 
 ## Q&A
 
-### Why all columns are resized while I'm resizing
+### 为什么拖动时所有列的宽度都改变了
 
-Ant Design makes the column width reactive. If all columns that given an init width via `width` can't fill the table, Ant Design will let column calculate a suitable width for itself. So you should make sure the sum of all columns width is greater than the table width. Anothor feasible way is to define a auto width column at the end (such as the example case).
+Ant Design 没有考虑列的宽度可变，它默认是响应式的. 如果所有列给定的列宽小于表格的宽度, Ant Design 会计算出列的自适应宽度. 所以使用时你要保证所有列宽度的和要大于表格的宽度. 另一个方法是, 定义一个伸缩列在最后，让触发自适应计算时, 让这个神所列填满表格的剩余空间, 就像上面例子里写的一样.
 
-### Why vue 3
+### 为什么使用 Vue 3
 
-Ant Design 2.x supports vue 3.
+Ant Design 2.x 版本支持 Vue 3
 
-### Must the columns be defined as a ref variable
+### columns 需要被定义成响应式变量 ref 吗
 
-Sure. The width of column will be change, so it must be a reactive variable.
+是的. 计算过程中需要改变列的宽度, 它需要及时反馈到页面上

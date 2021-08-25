@@ -46,6 +46,7 @@ export default class VueAntdResizableTableHeader {
     }
 
     // if fixed column
+    restProps.style ??= {};
     if(restProps.style.position) {
       restProps.style.zIndex = '1';
     } else {
